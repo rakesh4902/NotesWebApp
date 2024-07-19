@@ -1,0 +1,49 @@
+.header{
+    background-color: #01070e  ;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.header-title{
+    color:rgb(188, 152, 11);
+    font-size: 35px;
+    margin-left: 30px;
+    font-family: 'Roboto';
+}
+
+.welcome-message{
+    font-size: 30px;
+    font-family: 'Roboto';
+    margin: 10px;
+}
+
+.header-right{
+    display: flex;
+    margin-right: 30px;
+    color:white;
+    margin-top: 10px;
+}
+
+.logout-button{
+    width:80px;
+    height:40px;
+    font-weight: bold;
+    margin-top: 8px;
+    margin-left: 10px;
+    cursor: pointer;
+    color:#010b14;
+    background-color: #ffffff;
+    border:0px;
+}
+
+.logout-button:hover{
+    outline: none;
+    color: #ffffff;
+    background-color: rgb(242, 17, 17);
+}
+
+.notes-link{
+    text-decoration: none;
+}

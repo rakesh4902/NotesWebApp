@@ -1,0 +1,10 @@
+.navbar-noteform-cont{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+}
+
+.notes-page{
+    margin-left: 90px;
+    width: 100%;
+}

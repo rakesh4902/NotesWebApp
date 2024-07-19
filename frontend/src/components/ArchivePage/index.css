@@ -1,0 +1,16 @@
+.archive-page{
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.note-list{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.unarchive-btn{
+    height:30px;
+    cursor: pointer;
+    margin-right: 10px;
+}

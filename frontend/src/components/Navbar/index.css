@@ -1,0 +1,37 @@
+.side-nav-lists{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    background-color: black;
+    min-height: 88vh;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.side-nav-list{
+    margin-right: 30px;
+    margin-top: 30px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    padding-top: 0px;
+    list-style-type: none;
+    display: flex;
+    cursor: pointer;
+}
+
+
+
+.each-list{
+    color:white;
+    margin-right: 15px;
+    
+}
+
+.each-list-value{
+    color:white;
+    font-size: 22px;
+    font-family: 'Roboto';
+    margin-top: 2px;
+    font-weight: bold;
+}

@@ -1,0 +1,37 @@
+
+
+.success{
+    height:100px;
+    width:100px;
+}
+
+.success_msg{
+    color:green;
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.submission-tick{
+    color:white;
+    background-color: green;
+    border-radius:100%;
+}
+
+.login-back-button{
+    background-color: #ffffff;
+    color:#000305;
+    font-weight: bold;
+    font-family: 'Roboto';
+    border-radius: 5px;
+    width:150px;
+    height:30px;
+    border:0px solid;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.login-back-button:hover{
+    color:#ffffff;
+    background-color: green;
+}

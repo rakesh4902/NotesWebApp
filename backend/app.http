@@ -1,0 +1,85 @@
+### SIGNUP USER
+POST http://localhost:3000/register/ 
+Content-Type: application/json
+
+{
+    "username":"rakesh",
+    "password":"rakesh123"
+}
+
+### LOGIN USER
+POST http://localhost:3000/login/ 
+Content-Type: application/json
+
+{
+    "username":"rakesh",
+    "password":"rakesh123"
+}
+
+### GET USERS
+GET http://localhost:3000/users
+
+### Create a new note
+POST http://localhost:3000/notes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJha2VzaCIsImlkIjoxLCJpYXQiOjE3MjEyMzI3NTZ9.GCElWxzNXQxkI2XllNP0lTW6ijjVsx_Q5xHXfFIRUek
+
+{
+  "title": "Variables and Data Types",
+  "content": "Java has several data types: `int`, `double`, `boolean`, `char`, etc.",
+  "tags": "java, variables, data-types",
+  "color": "#e1bee7",
+  "reminder": "2024-08-02"
+}
+
+### Get all notes 
+GET http://localhost:3000/notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJhdmkiLCJpZCI6MiwiaWF0IjoxNzIxMzE0NDA5fQ.UKlJQYYhqrgS5mybnchYPUkd3ppbSsKhjWT3O8y1EK4
+
+### Update a note
+PUT http://localhost:3000/notes/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJha2VzaCIsImlkIjoxLCJpYXQiOjE3MjEyMzI3NTZ9.GCElWxzNXQxkI2XllNP0lTW6ijjVsx_Q5xHXfFIRUek
+
+{
+  "title": "Variables and Data Type",
+  "content": "Java has several data types",
+  "tags": "java, variables, data-types",
+  "color": "#e1bee7",
+  "reminder": "2024-08-02T10:00:00Z"
+}
+
+### Delete a note
+DELETE http://localhost:3000/notes/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJha2VzaCIsImlkIjoxLCJpYXQiOjE3MjEyMzI3NTZ9.GCElWxzNXQxkI2XllNP0lTW6ijjVsx_Q5xHXfFIRUek
+
+### Get all notes in the trash (deleted in the last 30 days)
+GET http://localhost:3000/notes/trash
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJha2VzaCIsImlkIjoxLCJpYXQiOjE3MjEyMzI3NTZ9.GCElWxzNXQxkI2XllNP0lTW6ijjVsx_Q5xHXfFIRUek
+
+### Permanently delete a note
+DELETE http://localhost:3000/notes/1/permanent
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJha2VzaCIsImlkIjoxLCJpYXQiOjE3MjEyMzI3NTZ9.GCElWxzNXQxkI2XllNP0lTW6ijjVsx_Q5xHXfFIRUek
+
+### Archive a note
+PATCH http://localhost:3000/notes/2/archive
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJha2VzaCIsImlkIjoxLCJpYXQiOjE3MjEyMzI3NTZ9.GCElWxzNXQxkI2XllNP0lTW6ijjVsx_Q5xHXfFIRUek
+
+### Get all archived notes
+GET http://localhost:3000/notes/archived
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJhdmkiLCJpZCI6MiwiaWF0IjoxNzIxMzE0NDA5fQ.UKlJQYYhqrgS5mybnchYPUkd3ppbSsKhjWT3O8y1EK4
+
+
+
+### Restore a note from archive
+PATCH http://localhost:3000/notes/2/restore
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJha2VzaCIsImlkIjoxLCJpYXQiOjE3MjEyMzI3NTZ9.GCElWxzNXQxkI2XllNP0lTW6ijjVsx_Q5xHXfFIRUek
+
+### FETCH Labels
+GET http://localhost:3000/labels
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJhdmkiLCJpZCI6MiwiaWF0IjoxNzIxMzE0NDA5fQ.UKlJQYYhqrgS5mybnchYPUkd3ppbSsKhjWT3O8y1EK4
+
+
+### FETCH Notes by label
+GET http://localhost:3000/notes/by-label?label=Java
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJhdmkiLCJpZCI6MiwiaWF0IjoxNzIxMzE0NDA5fQ.UKlJQYYhqrgS5mybnchYPUkd3ppbSsKhjWT3O8y1EK4
