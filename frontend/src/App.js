@@ -14,10 +14,10 @@ import { NotesProvider } from './components/context/NotesContext';
 function App() {
   return (
     <Router>
-      <Header />
-      <div className="navbar-noteform-cont">
+      
+     
         <NotesProvider> 
-          <Navbar />
+          
           <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
@@ -29,7 +29,7 @@ function App() {
             </Route>
           </Routes>
         </NotesProvider>
-      </div>
+
     </Router>
   );
 }

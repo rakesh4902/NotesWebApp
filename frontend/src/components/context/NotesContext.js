@@ -14,7 +14,7 @@ export const NotesProvider = ({ children }) => {
 
   const fetchLabels = async () => {
     try {
-      const response = await fetch('http://localhost:3000/labels', {
+      const response = await fetch('https://noteswebapp-1.onrender.com/labels', {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${Cookies.get('jwtToken')}`,
@@ -29,7 +29,7 @@ export const NotesProvider = ({ children }) => {
 
   const fetchNotes = async () => {
     try {
-      const response = await fetch('http://localhost:3000/notes', {
+      const response = await fetch('https://noteswebapp-1.onrender.com/notes', {
         headers: {
           Authorization: `Bearer ${Cookies.get('jwtToken')}`,
         },
@@ -44,7 +44,7 @@ export const NotesProvider = ({ children }) => {
   const addOrUpdateNote = async (note, id) => {
     try {
       const response = id
-        ? await fetch(`http://localhost:3000/notes/${id}`, {
+        ? await fetch(`https://noteswebapp-1.onrender.com/notes/${id}`, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ export const NotesProvider = ({ children }) => {
             },
             body: JSON.stringify(note),
           })
-        : await fetch('http://localhost:3000/notes', {
+        : await fetch('https://noteswebapp-1.onrender.com/notes', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

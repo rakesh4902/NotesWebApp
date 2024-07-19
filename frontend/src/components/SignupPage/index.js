@@ -24,7 +24,7 @@ class SignupPage extends Component {
     event.preventDefault();
     const { password, username } = this.state;
     const userDetails = { username, password };
-    const url = 'http://localhost:3000/register/ ';
+    const url = 'https://noteswebapp-1.onrender.com/register/ ';
 
     try {
       const response = await fetch(url, {

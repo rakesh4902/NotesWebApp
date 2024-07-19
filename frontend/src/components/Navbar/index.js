@@ -18,13 +18,13 @@ const Navbar = () => {
           <Link to="/" className='notes-link'><li className='each-list-value'>Notes</li></Link>
         </ul>
         {labels.length > 0 &&
-          labels.map((label) => (
+          (labels.map((label) => (
             <ul key={label} className='side-nav-list'>
-              <li className='each-list'><MdOutlineLabel size={30}/></li>
+              {label && <li className='each-list'><MdOutlineLabel size={30}/></li>}
               <Link to={`/notes/labels/${label}`} className='notes-link'>
                 <li className='each-list-value'>{label}</li>
               </Link>
-            </ul>
+            </ul>)
           ))}
         <ul className='side-nav-list'>
           <li className='each-list'><RiInboxArchiveLine size={30}/></li>

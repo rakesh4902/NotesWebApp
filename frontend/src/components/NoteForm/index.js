@@ -42,7 +42,7 @@ const NoteForm = ({ onNoteAction }) => {
 
   const handleArchiveClick = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/notes/${id}/archive`, {
+      const response = await fetch(`https://noteswebapp-1.onrender.com/notes/${id}/archive`, {
         method: 'PATCH',
         headers: {
           Authorization: `Bearer ${Cookies.get('jwtToken')}`,
@@ -61,7 +61,7 @@ const NoteForm = ({ onNoteAction }) => {
 
   const handleDeleteClick = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/notes/${id}`, {
+      const response = await fetch(`https://noteswebapp-1.onrender.com/notes/${id}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${Cookies.get('jwtToken')}`,

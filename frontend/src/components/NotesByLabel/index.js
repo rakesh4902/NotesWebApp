@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Cookies from 'js-cookie'
 import { useParams } from 'react-router-dom';
+import Header from '../Header';
+import Navbar from '../Navbar';
 
 const NotesByLabel = () => {
   const { label } = useParams();
@@ -14,7 +16,7 @@ const NotesByLabel = () => {
 
   const fetchNotesByLabel = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/notes/by-label?label=${label}`, {
+      const response = await fetch(`https://noteswebapp-1.onrender.com/notes/by-label?label=${label}`, {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${Cookies.get('jwtToken')}`
@@ -29,7 +31,7 @@ const NotesByLabel = () => {
 
   const handleArchiveClick = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/notes/${id}/archive`, {
+      const response = await fetch(`https://noteswebapp-1.onrender.com/notes/${id}/archive`, {
         method: 'PATCH',
         headers: {
           Authorization: `Bearer ${Cookies.get('jwtToken')}`
@@ -45,7 +47,7 @@ const NotesByLabel = () => {
 
   const handleDeleteClick = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/notes/${id}`, {
+      const response = await fetch(`https://noteswebapp-1.onrender.com/notes/${id}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${Cookies.get('jwtToken')}`
@@ -60,7 +62,13 @@ const NotesByLabel = () => {
   };
 
   return (
-    <div className='archive-page'>
+    
+        <div className='navbar-noteform-cont'>
+        <Header/>
+        
+      <div className="notes-page">
+        <Navbar/>
+        <div className='archive-page'>
       {notes.length > 0 ? 
       <><h1>Notes with label: {label}</h1>
       <ul className="note-list">
@@ -83,6 +91,8 @@ const NotesByLabel = () => {
       <h1>No Notes for this label yet</h1>
       }
     </div>
+      </div>
+      </div>
   );
 };
 

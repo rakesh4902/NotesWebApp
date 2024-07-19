@@ -28,7 +28,7 @@ const LoginPage = () => {
   const onSubmitLoginDetails = async (event) => {
     event.preventDefault();
     const userDetails = { username, password };
-    const url = 'http://localhost:3000/login/ ';
+    const url = 'https://noteswebapp-1.onrender.com/login/ ';
 
     try {
       const response = await fetch(url, {

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
 import './index.css';
+import Header from '../Header';
+import Navbar from '../Navbar';
 
 const Trash = () => {
   const [trashedNotes, setTrashedNotes] = useState([]);
@@ -11,7 +13,7 @@ const Trash = () => {
 
   const fetchTrashedNotes = async () => {
     try {
-      const response = await fetch('http://localhost:3000/notes/trash', {
+      const response = await fetch('https://noteswebapp-1.onrender.com/notes/trash', {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${Cookies.get('jwtToken')}`
@@ -33,7 +35,7 @@ const Trash = () => {
 
   const untrashNote = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/notes/${id}/untrash`, {
+      const response = await fetch(`https://noteswebapp-1.onrender.com/notes/${id}/untrash`, {
         method: 'PATCH',
         headers: {
           Authorization: `Bearer ${Cookies.get('jwtToken')}`
@@ -53,7 +55,7 @@ const Trash = () => {
 
   const deleteNotePermanently = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/notes/${id}/permanent`, {
+      const response = await fetch(`https://noteswebapp-1.onrender.com/notes/${id}/permanent`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${Cookies.get('jwtToken')}`
@@ -72,7 +74,13 @@ const Trash = () => {
   };
 
   return (
-    <div className="archive-page">
+    
+        <div className='navbar-noteform-cont'>
+        <Header/>
+        
+      <div className="notes-page">
+        <Navbar/>
+        <div className="archive-page">
       {trashedNotes.length>0 ? (
         <>
         <h1>Trashed Notes</h1>
@@ -93,6 +101,8 @@ const Trash = () => {
         <h1>No trashed Notes</h1> 
         }
     </div>
+      </div>
+      </div>
   );
 };
 

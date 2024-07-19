@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
 import './index.css';
+import Header from '../Header';
+import Navbar from '../Navbar';
 
 const Archive = () => {
   const [archivedNotes, setArchivedNotes] = useState([]);
@@ -11,7 +13,7 @@ const Archive = () => {
 
   const fetchArchivedNotes = async () => {
     try {
-      const response = await fetch('http://localhost:3000/notes/archived', {
+      const response = await fetch('https://noteswebapp-1.onrender.com/notes/archived', {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${Cookies.get('jwtToken')}`
@@ -33,7 +35,7 @@ const Archive = () => {
 
   const makeUnArchiveNote = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/notes/${id}/restore`, {
+      const response = await fetch(`https://noteswebapp-1.onrender.com/notes/${id}/restore`, {
         method: 'PATCH',
         headers: {
           Authorization: `Bearer ${Cookies.get('jwtToken')}`
@@ -52,7 +54,13 @@ const Archive = () => {
   };
 
   return (
-    <div className="archive-page">
+
+        <div className='navbar-noteform-cont'>
+        <Header/>
+        
+      <div className="notes-page">
+        <Navbar/>
+        <div className="archive-page">
         {archivedNotes.length > 0 ? 
       (<><h1>Archived Notes</h1>
       <ul className="note-list">
@@ -68,6 +76,8 @@ const Archive = () => {
       </ul>
       </>) : <h1>No Archived Notes</h1> }
     </div>
+      </div>
+      </div>
   );
 };
 
